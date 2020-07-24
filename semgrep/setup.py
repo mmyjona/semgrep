@@ -8,6 +8,8 @@ from setuptools import setup
 from setuptools.command.install import install
 from wheel.bdist_wheel import bdist_wheel as _bdist_wheel
 
+from semgrep.constants import __VERSION__
+
 
 @contextlib.contextmanager
 def chdir(dirname=None):
@@ -113,7 +115,7 @@ class PostInstallCommand(install):
 
 setup(
     name="semgrep",
-    version="0.16.0",
+    version=__VERSION__,
     author="Return To Corporation",
     author_email="support@r2c.dev",
     description="Fast and syntax-aware semantic code pattern search for many languages: like grep but for code",
